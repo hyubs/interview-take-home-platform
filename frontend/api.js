@@ -1,8 +1,16 @@
+/**
+ * Ideally we'd want to also make changes to the frontend so that it starts a new conversation
+ * before sending messages. But since this exercise focuses more on the backend, I applied as
+ * little changes to the frontend code as I could.
+ */
+const conversationID = "fd16a0f9-78d5-48af-82f6-9f2d372de7e0"; // Example only
+
 function sendMessage(userID, message) {
   $.ajax({
-    url: `http://localhost:3000/conversation/${diagramID}`,
+    url: `http://localhost:3000/conversations/${conversationID}/messages`,
     type: "post",
     data: {
+      diagramID,
       userID,
       message,
     },
@@ -16,7 +24,7 @@ function sendMessage(userID, message) {
             break;
           }
           case "url": {
-            addBotMessage('LINK: ' + reply.url);
+            addBotMessage("LINK: " + reply.url);
             break;
           }
           default: {

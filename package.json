@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "nest": "yarn workspace nest",
-    "express": "yarn workspace express",
+    "conversations": "yarn workspace conversations",
+    "diagrams": "yarn workspace diagrams",
     "format": "yarn prettier . --write"
   },
   "workspaces": [

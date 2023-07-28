@@ -1,6 +1,4 @@
-export type Reply =
-  | TextReply
-  | URLReply;
+export type Reply = TextReply | URLReply;
 
 export interface TextReply {
   type: "text";

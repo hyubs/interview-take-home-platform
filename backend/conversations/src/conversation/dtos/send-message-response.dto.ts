@@ -1,5 +1,5 @@
 import { Reply } from "../interfaces/reply.interface";
 
-export interface InteractResponseDTO {
+export interface SendMessageResponseDTO {
   reply: Reply[];
 }
