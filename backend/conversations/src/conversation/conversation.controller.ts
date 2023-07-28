@@ -10,6 +10,9 @@ import { Conversation, Diagram } from "@resources/interface";
 import { DiagramAPIService } from "@/diagram-api/diagram-api.service";
 import { SendMesssageRequestDTO } from "./dtos/send-message-request.dto";
 import { SendMessageResponseDTO } from "./dtos/send-message-response.dto";
+import { EventEmitter2 } from "@nestjs/event-emitter";
+import { MessageSentEvent } from "@resources/events";
+
 // Renamed route path from "conversation" to "conversations" to follow REST API naming standards.
 @Controller("conversations")
 export class ConversationController {
@@ -47,6 +50,14 @@ export class ConversationController {
   async sendMessage(
     @Body() body: SendMesssageRequestDTO,
   ): Promise<SendMessageResponseDTO> {
+    /**
+     * Emit an event containing the message. The event is consumed by a listener in the
+     * analytics module and is processed separately. This allows the API to continue with the
+     * rest of the main flow, thereby making the response time faster for the client.
+     */
+    const event: MessageSentEvent = { message: body.message };
+    this.eventEmitter.emit("message.sent", event);
+
     /**
      * This is the main flow of this endpoint. It fetches the diagram, processes its contents to
      * get the replies, and responds to the client.
