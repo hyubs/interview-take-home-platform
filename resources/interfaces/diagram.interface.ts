@@ -5,3 +5,5 @@ export interface Diagram {
   startNodeID: string;
   nodes: Record<string, Node>;
 }
+
+export type Diagrams = Record<string, Diagram>;

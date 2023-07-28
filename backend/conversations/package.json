@@ -1,0 +1,28 @@
+{
+  "name": "conversations",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nest start --debug --watch"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.1.0",
+    "@nestjs/core": "^10.1.0",
+    "@nestjs/platform-express": "^10.1.0",
+    "@nestjs/serve-static": "^4.0.0",
+    "@resources/data": "*",
+    "@resources/interface": "*",
+    "axios": "^1.4.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "express": "^4.18.2",
+    "rxjs": "^7.8.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.1.9",
+    "@types/uuid": "^9.0.2",
+    "reflect-metadata": "^0.1.13"
+  }
+}

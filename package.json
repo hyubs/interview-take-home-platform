@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "conversations": "yarn workspace conversations",
     "diagrams": "yarn workspace diagrams",
     "format": "yarn prettier . --write"
   },
