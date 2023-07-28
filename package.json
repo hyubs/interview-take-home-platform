@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "nest": "yarn workspace nest",
-    "express": "yarn workspace express",
     "format": "yarn prettier . --write"
   },
   "workspaces": [
